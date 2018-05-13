@@ -61,7 +61,7 @@ app.post('/images', upload.single('image'), (req, res) => {
 })
 
 app.get('/images', (req, res) => {
-  Image.find({})
+  Image.find({}).sort({ date: -1 })
     .then(images => {
       res.status(200).send(images)
     })

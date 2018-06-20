@@ -71,4 +71,8 @@ app.get('/images', (req, res) => {
     })
 })
 
-app.listen(8080, '0.0.0.0')
+const port = 8080 || process.env.PORT;
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server started at port: ${port}`);
+})
